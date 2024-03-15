@@ -17,17 +17,24 @@ const generateWord=(n)=>{
 let num;
 const generatePara=()=>{
    num=input.value;
-    
-    const para = document.createElement('p');
-    para.setAttribute("class","paras");
-
-    let data="";
-    for(let i=0;i<num;i++){
-        data+=generateWord((Math.random()*10).toFixed(0));
-        data+=" ";
+   
+    if(num>0){
+        const para = document.createElement('p');
+        para.setAttribute("class","paras");
+        let data="";
+        for(let i=0;i<num;i++){
+            data+=generateWord((Math.random()*10).toFixed(0));
+            data+=" ";
+        }
+        para.innerText=data;
+        container.append(para);
     }
-    para.innerText=data;
-    container.append(para);
+    else{
+        alert("Enter Number of Words !")
+    // const para = document.createElement('p');
+    // para.setAttribute("class","paras"); 
+}
+
 }
 
 
